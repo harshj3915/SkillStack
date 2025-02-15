@@ -41,6 +41,26 @@ export default function DashboardPage() {
     }
   }, [status]);
 
+  const handleRemoveCourse = async (videoId) => {
+    try {
+      const response = await fetch("/api/deletecourse", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ Id:videoId }),
+      });
+
+      if (response.ok) {
+        window.location.reload(); // Reload the page on success
+      } else {
+        console.error("Failed to remove course");
+      }
+    } catch (error) {
+      console.error("Error removing course:", error);
+    }
+  };
+
   if (status === "loading" || loading) {
     return <p className="text-center mt-10 text-gray-600">Loading...</p>;
   }
@@ -65,6 +85,8 @@ export default function DashboardPage() {
                   <div className="bg-indigo-600 h-2 rounded-full" style={{ width: `${Math.round((course.atTime / isoDurationToSeconds(course.details.contentDetails.duration)) * 100)}%` }}></div>
                 </div>
                 <button onClick={() => router.push(`/course/${course.id}`)} className="w-full btn-primary">Continue Course</button>
+                <button onClick={() => handleRemoveCourse(course.id)} className="w-full mt-2 btn-danger">Remove Course</button>
+
               </div>
             </DashboardCourseCard>
           ))
