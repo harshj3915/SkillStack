@@ -23,12 +23,18 @@ export default function CourseModal({ modalData, onClose }) {
     }
   };
 
-  console.log(video.snippet.description)
+  const formatNumber = (num) => {
+    if (num >= 1_000_000) {
+      return (num / 1_000_000).toFixed(1) + "M";
+    } else if (num >= 1_000) {
+      return (num / 1_000).toFixed(1) + "k";
+    }
+    return num;
+  };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg max-w-2xl w-full flex flex-col max-h-[90vh]">
-        {/* Image Section */}
         <div className="relative h-64">
           <Image
             src={video.snippet.thumbnails.high.url}
@@ -38,24 +44,27 @@ export default function CourseModal({ modalData, onClose }) {
           />
         </div>
 
-        {/* Content Section */}
         <div className="p-6 flex flex-col overflow-y-auto flex-grow">
           <h2 className="text-2xl font-bold mb-2">{video.snippet.title}</h2>
           <p className="text-gray-600 mb-2">By {video.snippet.channelTitle}</p>
           <p className="text-gray-500 text-sm mb-4">
             Published on {new Date(video.snippet.publishedAt).toDateString()}
           </p>
-          <div className="flex justify-between mb-4">
-            <span>Duration: {formatDuration(video.contentDetails.duration)}</span>
-            <span>Views: {video.statistics.viewCount}</span>
-            <span>Likes: {video.statistics.likeCount}</span>
-            <span>Comments: {video.statistics.commentCount}</span>
+
+
+          <div className="flex flex-wrap gap-4 mb-4">
+            <span className="text-gray-700">Duration: {formatDuration(video.contentDetails.duration)}</span>
+            <span className="text-gray-700">Views: {formatNumber(video.statistics.viewCount)}</span>
+            <span className="text-gray-700">Likes: {formatNumber(video.statistics.likeCount)}</span>
+            <span className="text-gray-700">Comments: {formatNumber(video.statistics.commentCount)}</span>
           </div>
-          <p className="text-gray-700 mb-6 flex-grow whitespace-pre-line"
-            style={{ whiteSpace: "pre-line" }}>{video.snippet.description}</p>
+
+
+          <p className="text-gray-700 mb-6 flex-grow whitespace-pre-line">
+            {video.snippet.description}
+          </p>
         </div>
 
-        {/* Footer Section with buttons */}
         <div className="p-6 flex justify-between mt-auto">
           <button
             onClick={onClose}
