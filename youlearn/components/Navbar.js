@@ -22,14 +22,14 @@ export default function Navbar() {
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-indigo-600">
               SkillStack
             </Link>
           </div>
 
-          {/* Hamburger Menu for Mobile */}
+
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -53,7 +53,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Desktop Navigation and Search */}
+
           <div className="flex-1 flex items-center justify-center px-2 hidden lg:flex">
             <div className="max-w-lg w-full">
               <form onSubmit={handleSearch} className="relative">
@@ -74,7 +74,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop User Menu */}
+
           <div className="hidden lg:flex items-center">
             {session ? (
               <>
@@ -101,7 +101,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+
         {isMenuOpen && (
           <div className="lg:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <form onSubmit={handleSearch} className="relative mb-4">
