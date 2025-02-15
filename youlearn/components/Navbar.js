@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold text-indigo-600">
-              YouLearn
+            SkillStack
             </Link>
           </div>
           <div className="flex-1 flex items-center justify-center px-2">

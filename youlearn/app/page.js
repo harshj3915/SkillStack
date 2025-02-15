@@ -10,7 +10,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-white">
-                  Learn Effectively with YouLearn
+                  Learn Effectively with SkillStack
                 </h1>
                 <p className="max-w-[600px] text-gray-200 md:text-xl">
                   Connect with YouTube courses and ensure a proper learning environment. Track your progress and never
@@ -42,7 +42,7 @@ export default function Home() {
 
       <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Why Choose YouLearn?</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Why Choose SkillStack?</h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
             <div className="flex flex-col items-center text-center">
               <div className="mb-4">
@@ -132,7 +132,7 @@ export default function Home() {
                 className="rounded-full mb-4 object-cover"
               />
               <p className="text-gray-500 mb-4">
-                "YouLearn has transformed the way I approach online learning. The structured approach keeps me focused
+                "SkillStack has transformed the way I approach online learning. The structured approach keeps me focused
                 and motivated."
               </p>
               <h4 className="font-bold">Sarah J.</h4>
@@ -147,7 +147,7 @@ export default function Home() {
                 className="rounded-full mb-4 object-cover"
               />
               <p className="text-gray-500 mb-4">
-                "I love how YouLearn combines YouTube's vast content with a structured learning environment. It's the
+                "I love how SkillStack combines YouTube's vast content with a structured learning environment. It's the
                 best of both worlds!"
               </p>
               <h4 className="font-bold">Michael T.</h4>
@@ -179,7 +179,7 @@ export default function Home() {
             Ready to Start Your Learning Journey?
           </h2>
           <p className="max-w-[600px] text-gray-200 md:text-xl mx-auto mb-8">
-            Join YouLearn today and unlock a world of structured, effective learning from YouTube's best educational
+            Join SkillStack today and unlock a world of structured, effective learning from YouTube's best educational
             content.
           </p>
           <Link href="/search?query=NextJs" className="btn-secondary inline-block">
