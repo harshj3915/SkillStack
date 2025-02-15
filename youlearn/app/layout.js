@@ -7,7 +7,7 @@ import { ContextProvider } from "../context/context"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Skill Stack",
+  title: "SkillStack",
   description: "Connect with YouTube courses and learn effectively"
 }
 
