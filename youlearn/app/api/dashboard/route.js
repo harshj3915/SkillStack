@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 
 const API_KEY = process.env.YOUTUBE_API_KEY;
 const YOUTUBE_API_URL = "https://youtube.googleapis.com/youtube/v3/videos";
+export const dynamic = "force-dynamic";
 
 export async function GET() {
     try {
